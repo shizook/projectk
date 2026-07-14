@@ -1,0 +1,124 @@
+﻿@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --surface-base: 249 250 251;
+    --surface-elevated: 255 255 255;
+    --surface-strong: 15 23 42;
+    --accent-primary: 37 99 235;
+    --accent-secondary: 148 163 184;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --surface-base: 15 23 42;
+    --surface-elevated: 17 24 39;
+    --surface-strong: 30 41 59;
+    --accent-primary: 96 165 250;
+    --accent-secondary: 148 163 184;
+  }
+
+  body {
+    @apply font-sans antialiased text-slate-900 transition-colors duration-300;
+    background:
+      radial-gradient(circle at top left, rgba(37, 99, 235, 0.15), transparent 55%),
+      radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.08), transparent 45%),
+      rgb(var(--surface-base));
+  }
+
+  .dark body {
+    @apply text-slate-100;
+    background:
+      radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 55%),
+      radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.12), transparent 45%),
+      rgb(var(--surface-base));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-3xl border border-slate-200/70 bg-white/90 shadow-lg shadow-slate-200/40 backdrop-blur dark:border-white/10 dark:bg-white/5 dark:shadow-black/40;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-slate-200/70 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500 transition hover:border-slate-900 hover:text-slate-900 dark:border-white/10 dark:text-slate-300 dark:hover:border-white/40 dark:hover:text-white;
+  }
+
+  .headline-link {
+    @apply text-lg font-semibold leading-snug text-slate-900 transition hover:text-blue-600 dark:text-white dark:hover:text-blue-300;
+  }
+
+  .quill-wrapper {
+    @apply relative space-y-2;
+  }
+
+  .prose a {
+    @apply text-blue-600 underline underline-offset-2 transition hover:text-blue-500 dark:text-blue-300 dark:hover:text-blue-200;
+  }
+
+  .quill-wrapper .ql-toolbar {
+    @apply w-full rounded-t-lg border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800;
+  }
+
+  .quill-wrapper .ql-toolbar button,
+  .quill-wrapper .ql-toolbar .ql-picker-label,
+  .quill-wrapper .ql-toolbar .ql-picker-item {
+    color: #ffffff;
+  }
+
+  .quill-wrapper .ql-toolbar .ql-stroke {
+    stroke: #ffffff !important;
+  }
+
+  .quill-wrapper .ql-toolbar .ql-fill {
+    fill: #ffffff !important;
+  }
+
+  .quill-wrapper .ql-toolbar .ql-picker {
+    @apply text-white;
+  }
+
+  .quill-wrapper .ql-container {
+    @apply w-full rounded-b-lg border border-t-0 border-slate-200 bg-white text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100;
+    min-height: 16rem;
+    overflow-y: auto;
+  }
+
+  .quill-wrapper .ql-editor {
+    @apply leading-relaxed;
+    min-height: 16rem;
+  }
+
+  .dark .quill-wrapper .ql-editor a {
+    @apply text-blue-300;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(148, 163, 184, 0.25);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.45);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 99, 235, 0.7);
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
