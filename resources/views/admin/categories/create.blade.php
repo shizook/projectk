@@ -5,35 +5,35 @@
 <div class="space-y-8">
     <header class="flex items-center justify-between">
         <div>
-            <p class="text-xs uppercase tracking-[0.3em] text-brand-500">Kategori</p>
-            <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Buat Kategori Baru</h1>
-            <p class="text-sm text-slate-500 dark:text-slate-300">Atur rubrik agar navigasi konten tetap terstruktur.</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Kategori</p>
+            <h1 class="text-2xl font-bold text-white">Buat Kategori Baru</h1>
+            <p class="text-sm text-slate-400">Atur rubrik agar navigasi konten tetap terstruktur.</p>
         </div>
-        <a href="{{ route('categories.index') }}" class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300">Kembali</a>
+        <a href="{{ route('categories.index') }}" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300 transition hover:border-white/30 hover:text-white">Kembali</a>
     </header>
 
-    <form method="POST" action="{{ route('categories.store') }}" class="space-y-6 rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-sm dark:border-slate-800/80 dark:bg-slate-900/70">
+    <form method="POST" action="{{ route('categories.store') }}" class="space-y-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-sm">
         @csrf
 
         <div class="space-y-2">
-            <label class="text-xs font-semibold uppercase tracking-widest text-slate-400">Nama Kategori</label>
-            <input type="text" name="name" value="{{ old('name') }}" required autofocus maxlength="120" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200 dark:border-slate-700 dark:bg-slate-900" placeholder="Misal: Teknologi">
+            <label class="block text-xs font-semibold uppercase tracking-widest text-slate-400">Nama Kategori</label>
+            <input type="text" name="name" value="{{ old('name') }}" required autofocus maxlength="120" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/10" placeholder="Misal: Teknologi">
             @error('name')
-                <p class="text-xs font-semibold text-rose-500">{{ $message }}</p>
+                <p class="text-xs font-semibold text-rose-400">{{ $message }}</p>
             @enderror
         </div>
 
         <div class="space-y-2">
-            <label class="text-xs font-semibold uppercase tracking-widest text-slate-400">Deskripsi (opsional)</label>
-            <textarea name="description" rows="4" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200 dark:border-slate-700 dark:bg-slate-900" placeholder="Gambaran singkat tentang rubrik ini">{{ old('description') }}</textarea>
+            <label class="block text-xs font-semibold uppercase tracking-widest text-slate-400">Deskripsi (opsional)</label>
+            <textarea name="description" rows="4" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/10" placeholder="Gambaran singkat tentang rubrik ini">{{ old('description') }}</textarea>
             @error('description')
-                <p class="text-xs font-semibold text-rose-500">{{ $message }}</p>
+                <p class="text-xs font-semibold text-rose-400">{{ $message }}</p>
             @enderror
         </div>
 
         <div class="flex items-center justify-end gap-3">
-            <a href="{{ route('categories.index') }}" class="rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-500 hover:border-slate-300 hover:text-slate-700 dark:border-slate-700 dark:text-slate-300">Batal</a>
-            <button type="submit" class="rounded-full bg-brand-600 px-6 py-2 text-sm font-semibold text-white transition hover:bg-brand-500">Simpan Kategori</button>
+            <a href="{{ route('categories.index') }}" class="rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-slate-400 transition hover:border-white/30 hover:text-white">Batal</a>
+            <button type="submit" class="rounded-full bg-white px-6 py-2 text-sm font-semibold text-[#03081a] transition hover:bg-slate-200">Simpan Kategori</button>
         </div>
     </form>
 </div>

@@ -8,12 +8,19 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    public function index()
-    {
-        $menus = MenuItem::orderBy('location')->orderBy('display_order')->get();
-        return view('admin.menus.index', compact('menus'));
+   public function index(Request $request)
+{
+    $menus = MenuItem::orderBy('location')->orderBy('display_order')->get();
+    
+    $menuData = null;
+    if ($request->has('edit')) {
+        $menuData = MenuItem::find($request->edit);
+        // UNTUK DEBUGGING:
+        // dd($menuData); 
     }
 
+    return view('admin.menus.index', compact('menus', 'menuData'));
+}
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -28,19 +35,24 @@ class MenuController extends Controller
         return back()->with('ok','Menu item dibuat.');
     }
 
-    public function update(MenuItem $menuItem, Request $request)
-    {
-        $data = $request->validate([
-            'title'=>'required|max:120',
-            'url'=>'required|max:255',
-            'location'=>'required|in:header,footer',
-            'display_order'=>'required|integer',
-            'visible'=>'required|boolean'
-        ]);
+   public function update(Request $request, MenuItem $menuItem)
+   {
+    $data = $request->validate([
+        'title'         => 'required|max:120',
+        'url'           => 'required|max:255',
+        'location'      => 'required|in:header,footer',
+        'display_order' => 'nullable|integer',
+        'visible'       => 'required|boolean'
+    ]);
 
-        $menuItem->update($data);
-        return back()->with('ok','Menu item diupdate.');
-    }
+    $data['display_order'] = $data['display_order'] ?? 0;
+
+    // Simpan perubahan ke database menggunakan $menuItem
+    $menuItem->update($data);
+
+    // Redirect balik ke index
+    return redirect()->route('admin.menus.index')->with('ok', 'Menu item diupdate.');
+}
 
     public function destroy(MenuItem $menuItem)
     {

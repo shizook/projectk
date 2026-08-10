@@ -10,10 +10,20 @@
   </div>
 
   @if($post->cover_image)
-    <img src="{{ asset('storage/'.$post->cover_image) }}" class="my-4 rounded-xl w-full object-cover max-h-[500px]">
+    <div class="my-4">
+      <img src="{{ asset('storage/'.$post->cover_image) }}" class="rounded-xl w-full object-cover max-h-[500px]">
+      
+      {{-- Menampilkan sumber foto tanpa pengecekan berlapis --}}
+      @if($post->cover_source)
+        <p class="mt-2 text-xs italic text-slate-300 font-medium">
+          {{ $post->cover_source }}
+        </p>
+      @endif
+    </div>
   @endif
 
-  <div class="prose dark:prose-invert max-w-none">{!! $post->content !!}</div>
+  <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+  <div class="ql-editor !p-0 max-w-none dark:prose-invert prose">{!! $post->content !!}</div>
 
   <section class="mt-10">
     <h2 class="text-xl font-semibold mb-4">Komentar</h2>
@@ -52,6 +62,3 @@
   @endif
 </article>
 @endsection
-
-
-

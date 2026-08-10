@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('admin.settings.logo') }}" enctype="multipart/form-data" class="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-sm dark:border-slate-800/80 dark:bg-slate-900/70">
+    <!-- <form method="POST" action="{{ route('admin.settings.logo') }}" enctype="multipart/form-data" class="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-sm dark:border-slate-800/80 dark:bg-slate-900/70">
         @csrf
         @method('PUT')
 
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-    </form>
+    </form> -->
 
     <header class="flex flex-col gap-2">
         <p class="text-sm uppercase tracking-[0.3em] text-brand-500">Admin Panel</p>
@@ -77,11 +77,13 @@
                     <p class="text-xs text-slate-500 dark:text-slate-300">Berdasarkan total view</p>
                 </div>
                 <span class="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-amber-600">Konten</span>
+            </div>  
+            <div style="position: relative; height: 320px;">
+                <canvas id="topPostsChart"></canvas>
             </div>
-            <canvas id="topPostsChart"></canvas>
         </div>
-    </div>
-
+</div>
+ 
     <section class="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-sm dark:border-slate-800/80 dark:bg-slate-900/70">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
@@ -93,39 +95,36 @@
 
         <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             <a href="{{ route('posts.index') }}" class="group rounded-2xl border border-slate-200/80 bg-slate-50/80 px-5 py-4 transition hover:border-brand-500 hover:bg-brand-500/5 dark:border-slate-700/80 dark:bg-slate-900/70">
-                <div class="flex items-center justify-between">
+                <div class="flex items-start justify-between gap-2">
                     <h3 class="font-semibold text-slate-900 transition group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-300">Kelola Postingan</h3>
-                    <span class="rounded-full bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-600">Author</span>
+                    <span class="shrink-0 rounded-full bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-600">Author</span>
                 </div>
                 <p class="mt-2 text-xs text-slate-500 dark:text-slate-300">Buat, sunting, dan jadwalkan berita.</p>
             </a>
 
             <a href="{{ route('categories.index') }}" class="group rounded-2xl border border-slate-200/80 bg-slate-50/80 px-5 py-4 transition hover:border-brand-500 hover:bg-brand-500/5 dark:border-slate-700/80 dark:bg-slate-900/70">
-                <div class="flex items-center justify-between">
-                    <h3 class="font-semibold text-slate-900 transition group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-300">Kategori</h3>
-                    <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600">Struktur</span>
-                </div>
-                <p class="mt-2 text-xs text-slate-500 dark:text-slate-300">Atur rubrik supaya navigasi rapi.</p>
-            </a>
+    <div class="flex items-start justify-between gap-2">
+        <h3 class="font-semibold text-slate-900 transition group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-300">Kategori</h3>
+        <span class="shrink-0 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600">Struktur</span>
+    </div>
+    <p class="mt-2 text-xs text-slate-500 dark:text-slate-300">Atur rubrik supaya navigasi rapi.</p>
+</a>
 
-            <a href="{{ route('admin.menus.index') }}" class="group rounded-2xl border border-slate-200/80 bg-slate-50/80 px-5 py-4 transition hover:border-brand-500 hover:bg-brand-500/5 dark:border-slate-700/80 dark:bg-slate-900/70">
-                <div class="flex items-center justify-between">
-                    <h3 class="font-semibold text-slate-900 transition group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-300">Menu Navigasi</h3>
-                    <span class="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-600">UI</span>
-                </div>
-                <p class="mt-2 text-xs text-slate-500 dark:text-slate-300">Susun item menu utama dan footer.</p>
-            </a>
+<a href="{{ route('admin.menus.index') }}" class="group rounded-2xl border border-slate-200/80 bg-slate-50/80 px-5 py-4 transition hover:border-brand-500 hover:bg-brand-500/5 dark:border-slate-700/80 dark:bg-slate-900/70">
+    <div class="flex items-start justify-between gap-2">
+        <h3 class="font-semibold text-slate-900 transition group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-300">Menu Navigasi</h3>
+        <span class="shrink-0 rounded-full bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-600">UI</span>
+    </div>
+    <p class="mt-2 text-xs text-slate-500 dark:text-slate-300">Susun item menu utama dan footer.</p>
+</a>
 
-            <a href="{{ route('admin.users.index') }}" class="group rounded-2xl border border-slate-200/80 bg-slate-50/80 px-5 py-4 transition hover:border-brand-500 hover:bg-brand-500/5 dark:border-slate-700/80 dark:bg-slate-900/70">
-                <div class="flex items-center justify-between">
-                    <h3 class="font-semibold text-slate-900 transition group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-300">Pengguna & Peran</h3>
-                    <span class="rounded-full bg-rose-500/10 px-3 py-1 text-xs font-semibold text-rose-600">Akses</span>
-                </div>
-                <p class="mt-2 text-xs text-slate-500 dark:text-slate-300">Promosikan author baru atau batasi akses.</p>
-            </a>
-        </div>
-    </section>
-</div>
+<a href="{{ route('admin.users.index') }}" class="group rounded-2xl border border-slate-200/80 bg-slate-50/80 px-5 py-4 transition hover:border-brand-500 hover:bg-brand-500/5 dark:border-slate-700/80 dark:bg-slate-900/70">
+    <div class="flex items-start justify-between gap-2">
+        <h3 class="font-semibold text-slate-900 transition group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-300">Pengguna & Peran</h3>
+        <span class="shrink-0 rounded-full bg-rose-500/10 px-3 py-1 text-xs font-semibold text-rose-600">Akses</span>
+    </div>
+    <p class="mt-2 text-xs text-slate-500 dark:text-slate-300">Promosikan author baru atau batasi akses.</p>
+</a>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -163,9 +162,26 @@ new Chart(document.getElementById('topPostsChart'), {
             borderRadius: 8,
         }]
     },
-    options: {
+   options: {
+        indexAxis: 'y',
+        maintainAspectRatio: false,
         plugins: { legend: { display: false } },
-        scales: { y: { beginAtZero: true } }
+        scales: {
+            x: { beginAtZero: true },
+            y: {
+                ticks: {
+                    autoSkip: false,
+                    color: '#e2e8f0',
+                    font: {
+                        weight: 'bold'
+                    },
+                    callback: function(value) {
+                        let label = this.getLabelForValue(value);
+                        return label.length > 28 ? label.substring(0, 28) + '…' : label;
+                    }
+                }
+            }
+        }
     }
 });
 </script>

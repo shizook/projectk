@@ -34,7 +34,8 @@ class PostController extends Controller
             'category_id'=>'nullable|exists:categories,id',
             'content'=>'required',
             'status'=>'required|in:draft,published',
-            'cover_image'=>'nullable|image|max:2048'
+            'cover_image'=>'nullable|image|max:2048',
+            'cover_image_source'=>'nullable|string|max:255',
         ]);
 
         $data['user_id'] = $request->user()->id;
@@ -44,6 +45,10 @@ class PostController extends Controller
         $data['meta_title'] = $data['title'];
         $data['meta_description'] = Str::limit($plain, 155);
         if ($data['status']==='published') $data['published_at'] = now();
+
+        
+        $data['cover_source'] = $request->input('cover_source') ?? $request->input('cover_image_source');
+        unset($data['cover_image_source']);
 
         if ($request->hasFile('cover_image')) {
             $data['cover_image'] = $request->file('cover_image')->store('posts','public');
@@ -72,7 +77,8 @@ class PostController extends Controller
             'category_id'=>'nullable|exists:categories,id',
             'content'=>'required',
             'status'=>'required|in:draft,published',
-            'cover_image'=>'nullable|image|max:2048'
+            'cover_image'=>'nullable|image|max:2048',
+            'cover_image_source'=>'nullable|string|max:255',
         ]);
 
         $plain = $this->plainText($data['content']);
@@ -80,6 +86,9 @@ class PostController extends Controller
         $data['meta_title'] = $data['title'];
         $data['meta_description'] = Str::limit($plain, 155);
         if ($data['status']==='published' && !$post->published_at) $data['published_at'] = now();
+
+        $data['cover_source'] = $request->input('cover_source') ?? $request->input('cover_image_source');
+        unset($data['cover_image_source']);
 
         if ($request->hasFile('cover_image')) {
             $data['cover_image'] = $request->file('cover_image')->store('posts','public');

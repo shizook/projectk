@@ -3,7 +3,7 @@
 <td class="header">
 <a href="{{ config('app.url') }}" style="display: inline-block;">
 @if (trim($slot) === config('app.name'))
-<img src="{{ asset('logokc.jpg') }}" class="logo" alt="KC Logo">
+<img src="{{ asset('logokc.jpg') }}" class="logo" alt="">
 @else
 {!! $slot !!}
 @endif

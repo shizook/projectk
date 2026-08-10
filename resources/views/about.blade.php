@@ -16,7 +16,7 @@
     </section>
 
     <section class="glass-card space-y-6 p-10 lg:p-14">
-        <h2 class="text-2xl font-bold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">[ VISI & MISI KOMPAS CORNER GEN 12]</h2>
+        <h2 class="text-2xl font-bold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">[ VISI & MISI KOMPAS CORNER GEN 13]</h2>
         <div class="space-y-4 text-base leading-relaxed text-slate-700 dark:text-slate-200">
             <div class="space-y-3">
                 <p class="font-semibold text-slate-900 dark:text-white">- VISI</p>
@@ -40,11 +40,11 @@
                 <p class="text-xl font-semibold text-slate-900 dark:text-white">“Ruang Interaksi, Wadah Inovasi”</p>
             </div>
             <div class="space-y-3">
-                <h3 class="text-2xl font-bold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">[KONSEP GEN 12]</h3>
+                <h3 class="text-2xl font-bold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">[KONSEP GEN 13]</h3>
                 <p class="text-xl font-semibold text-slate-900 dark:text-white">“Ruang Interaksi Dari Kami Untuk Masa Depan”</p>
             </div>
             <div class="space-y-4">
-                <h3 class="text-2xl font-bold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">[TEMA GEN 12]</h3>
+                <h3 class="text-2xl font-bold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">[TEMA GEN 13]</h3>
                 <p>Peradaban Kuno</p>
                 <p>Filosofi : Mengusung tema peradaban kuno seperti Yunani, Mesir, Romawi dan Tiongkok organisasi Kompas Corner diharapkan dapat mengintegrasikan filosofi dari peradaban kuno dengan tujuan organisasi sebagai wadah kreasi untuk seluruh mahasiswa Universitas Multimedia Nusantara.</p>
                 <p>Pada peradaban Mesir Kuno : Peradaban Mesir dikenal dengan prinsip keseimbangan dalam kehidupan sehari-hari, baik dalam aspek sosial maupun lingkungan. Kompas Corner dapat menjadi platform yang mempromosikan kolaborasi antar mahasiswa untuk menciptakan proyek-proyek yang harmonis dan berkelanjutan.</p>
@@ -57,7 +57,7 @@
     </section>
 
     <section class="glass-card space-y-8 p-10 lg:p-14">
-        <h2 class="text-2xl font-bold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">[DIVISI KOMPAS CORNER GEN 12]</h2>
+        <h2 class="text-2xl font-bold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-300">[DIVISI KOMPAS CORNER GEN 13]</h2>
         <div class="space-y-8 text-base leading-relaxed text-slate-700 dark:text-slate-200">
             <div class="space-y-3">
                 <p class="font-semibold text-slate-900 dark:text-white">1. EVENT</p>

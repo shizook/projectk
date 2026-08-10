@@ -14,9 +14,11 @@ class DashboardController extends Controller
     public function index()
     {
         $visitorsRaw = DB::table('site_metrics')
-            ->orderBy('metric_date')
+            ->orderByDesc('metric_date')
             ->limit(14)
-            ->get();
+            ->get()
+            ->sortBy('metric_date')
+            ->values();
 
         $visitors = collect($visitorsRaw)->map(function ($row) {
             return [
