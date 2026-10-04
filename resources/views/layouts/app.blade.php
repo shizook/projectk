@@ -23,7 +23,7 @@
     
     <link rel="canonical" href="{{ url()->current() }}">
     
-    <link rel="stylesheet" href="{{ asset('build/assets/app-U1EFl2Q4.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://unpkg.com/alpinejs@3.13.0/dist/cdn.min.js" defer></script>
     <script src="{{ asset('build/assets/app-Bj43h_rG.js') }}" defer></script>
 

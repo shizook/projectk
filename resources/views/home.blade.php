@@ -20,7 +20,7 @@
             <article class="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 text-white shadow-xl">
                 <div class="absolute inset-0">
                     @if($hero->cover_image)
-                        <img src="{{ asset('storage/'.$hero->cover_image) }}" alt="{{ $hero->title }}" class="h-full w-full object-cover" loading="lazy">
+                        <img src="{{ asset('storage/'.$hero->cover_image) }}" alt="{{ $hero->title }}" class="h-full w-full object-cover blur-sm" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
                     @else
                         <div class="h-full w-full bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950"></div>

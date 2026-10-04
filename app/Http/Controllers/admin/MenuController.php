@@ -15,8 +15,7 @@ class MenuController extends Controller
     $menuData = null;
     if ($request->has('edit')) {
         $menuData = MenuItem::find($request->edit);
-        // UNTUK DEBUGGING:
-        // dd($menuData); 
+        
     }
 
     return view('admin.menus.index', compact('menus', 'menuData'));
